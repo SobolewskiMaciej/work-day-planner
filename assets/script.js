@@ -1,29 +1,29 @@
 $(document).ready(function() {
-    // Display the current date
+    // display the current date
     displayCurrentDate();
 
-    // Add classes and elements to the time blocks
+    // add classes and elements to the time blocks
     addClassesAndElements();
 
-    // Color-code the middle column based on past, present, future
+    // color-code the middle column based on past, present, future
     colorCodeMiddleColumn();
 
-    // Event listener for clicking on a time block to enter an event and saving the event to local storage
+    // event listener for clicking on a time block to enter an event and saving the event to local storage
     $('.time-block').on('click', function() {
         $(this).attr('contenteditable', 'true'); // Make the time block editable
 
-        // Save the event to local storage when the time block loses focus
+        // save the event to local storage when the time block loses focus
         $(this).on('blur', function() {
             let timeBlockId = $(this).closest('.row').attr('id');
             let eventText = $(this).text();
             localStorage.setItem(timeBlockId, eventText);
 
-            // Populate the saved event data only in the current time block
+            // populate the saved event data only in the current time block
             $(this).text(eventText);
         });
     });
 
-    // Assign unique IDs to time block elements and populate saved events
+    // assign unique IDs to time block elements and populate saved events
     $('.row').each(function(index) {
         let uniqueId = `timeBlock-${index + 1}`;
         $(this).attr('id', uniqueId);
@@ -34,13 +34,13 @@ $(document).ready(function() {
         }
     });
 });
-
+// display date
 function displayCurrentDate() {
     const currentDate = new Date();
     const formattedDate = dayjs(currentDate).format('dddd, MMMM D, YYYY');
     $('#currentDay').text(formattedDate);
 }
-
+// add classes 
 function addClassesAndElements() {
     $('.row').each(function() {
         $(this).find('.col-1').addClass('hour');
@@ -48,7 +48,7 @@ function addClassesAndElements() {
         $(this).find('.col-10').addClass('time-block');
     });
 }
-
+// change color of block-time
 function colorCodeMiddleColumn() {
     var currentHour = dayjs().hour();
 
@@ -67,7 +67,7 @@ function colorCodeMiddleColumn() {
         });
     });
 }
-
+// convert am/pm to 24h
 function convertHour12to24(time12h) {
     let [hours, modifier] = time12h.match(/(\d+|PM|AM)/gi);
     if (hours === '12') {
@@ -78,3 +78,4 @@ function convertHour12to24(time12h) {
     }
     return `${hours}`;
 }
+// localStorage.clear();
