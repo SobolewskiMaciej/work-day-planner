@@ -1,7 +1,8 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1;
+  background-color: rgb(20, 91, 91);
 }
 
 textarea {
@@ -15,8 +16,8 @@ textarea {
 
 header {
   text-align: center;
-  background-color: transparent;
-  color: black;
+  background-color:  rgb(20, 91, 91);
+  color: rgb(255, 255, 255);
   border-radius: 0;
   border-bottom: 10px solid black;
   padding: 60px;
@@ -29,6 +30,10 @@ header {
 .time-block {
   text-align: center;
   border-radius: 15px;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+  
 }
 
 .row {
@@ -38,35 +43,44 @@ header {
 }
 
 .hour {
-  background-color: #ffffff;
-  color: #000000;
-  border-top: 1px dashed #000000;
+  background-color: #2e494f;
+  color: #ffffff;
+  border-top: 3px dashed #000000;
+  display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+
 .past {
-  background-color: #d3d3d3;
+  background-color: #655757;
   color: white;
 }
 
 .present {
-  background-color: #ff6961;
+  background-color: #7a1913;
   color: white;
 }
 
 .future {
-  background-color: #77dd77;
+  background-color: #0d3f0d;
   color: white;
 }
 
 .saveBtn {
+  font-size: 30px;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
-  background-color: #06aed5;
+  background-color: #2e494f;
   color: white;
+  display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .saveBtn i:hover {
-  font-size: 20px;
+  font-size: 30px;
   transition: all 0.3s ease-in-out;
+  color:#c5bf1c
 }
