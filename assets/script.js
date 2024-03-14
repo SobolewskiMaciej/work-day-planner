@@ -78,4 +78,9 @@ function convertHour12to24(time12h) {
     }
     return `${hours}`;
 }
+
+// reload the page after 3000 seconds to update colours when hour is changing
+setTimeout(function() {
+    location.reload();
+}, 300000); 
 // localStorage.clear();
